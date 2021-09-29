@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- <link rel="stylesheet" href="reset.css"> -->
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <title>Empregados - Desafio</title>
+</head>
+
+<body>
+  <main>
+    <form id="employee-form">
+      <fieldset>
+        <legend> Dados do Empregado </legend>
+        <div>
+          <span id="alert"></span>
+        </div>
+        <div class="input-field">
+          <input type="text" id="name" name="name">
+          <label class="active" for="name">Nome: </label>
+        </div>
+        <div>
+          <label class="active" for="roles-select">Cargo:</label>
+          <select class="browser-default" id="roles-select" name="role_id">
+            <option value="" disabled selected>Escolha o cargo</option>
+          </select>
+        </div>
+        <div class="input-field">
+          <input type="number" name="salary" id="salary">
+          <label class="active" for="salary">Salário:</label>
+        </div>
+        <div>
+          <button class="btn" type="submit" id="btn-submit">Salvar</button>
+          <button class="btn" type="button" id="btn-clear">Limpar</button>
+          <button class="btn disabled" type="button" id="btn-delete">Deletar</button>
+        </div>
+      </fieldset>
+    </form>
+    <div class="dados row">
+      <div class="roles col s4">
+        <label class="active"> Ordenar por: </label>
+        <select class="browser-default" id="select-order">
+          <option value="" disabled selected>Escolha a ordem</option>
+          <option value="name-asc">Nome (asc)</option>
+          <option value="name-desc">Nome (desc)</option>
+          <option value="salary-asc">Salário (asc)</option>
+          <option value="salary-desc">Salário (desc)</option>
+        </select>
+
+        <fieldset>
+          <legend> Filtro por cargo </legend>
+          <div class="roles-checkbox" id="roles-checkbox">
+
+
+          </div>
+        </fieldset>
+      </div>
+      <div class="list col s8" id="table-employees">
+        <table class="striped" id="list-employees">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Nome</th>
+              <th>Cargo</th>
+              <th>Salário</th>
+            </tr>
+          </thead>
+            <tbody id="tbody-employees">
+
+            </tbody>
+        </table>
+      </div>
+    </div>
+  </main>
+
+  <script type="module" src="main.js"></script>
+
+</body>
+
+</html>
